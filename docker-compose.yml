@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  coqui-tts:
+    labels:
+        - flame.type=application
+        - flame.name=Coqui TTS
+        - flame.url=http://192.168.NNN.NNN:5002/
+    image: pierredurrr/coqui-tts:1.0
+    ports:
+      - "5002:5002"
+    restart: unless-stopped
+    volumes:
+      - /docker_data2/coquitts/config:/home/coqui_user/.local/share/tts
